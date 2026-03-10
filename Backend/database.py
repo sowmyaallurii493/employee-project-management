@@ -1,10 +1,11 @@
-import pyodbc
+import psycopg2
 
 def get_connection():
-    conn = pyodbc.connect(
-        "DRIVER={ODBC Driver 17 for SQL Server};"
-        "SERVER=localhost\\SQLEXPRESS;"
-        "DATABASE=employee_project_db;"
-        "Trusted_Connection=yes;"
+    conn = psycopg2.connect(
+        host="localhost",
+        database="backend_eval",
+        user="postgres",
+        password="1234",
+        port="5433"
     )
     return conn
